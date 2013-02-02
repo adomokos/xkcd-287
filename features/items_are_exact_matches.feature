@@ -7,7 +7,7 @@ Feature:
       $15.05
       mixed fruit,$15.05
       """
-     When I ask for a suggested menu
+     When I ask for a suggested menus
      Then the following menus should be presented:
       """
       Menu 1:
@@ -21,7 +21,7 @@ Feature:
       mixed fruit,$15.05
       pasta,$15.05
       """
-     When I ask for a suggested menu
+     When I ask for a suggested menus
      Then the following menus should be presented:
       """
       Menu 1:
