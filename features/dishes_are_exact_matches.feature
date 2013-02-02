@@ -1,5 +1,5 @@
 Feature:
-  The Items on the menu are the exact match for the target price
+  The dishes on the menu are the exact match of the target price
 
   Scenario: The one item on the menu is the exact match of avail funds
     Given the following input file:
