@@ -6,6 +6,7 @@ module Xkcd
 
       [
         ParsesInputStringAction,
+        FindsMenusAction,
         BuildsResultAction
       ].each { |action| action.execute(context) }
 

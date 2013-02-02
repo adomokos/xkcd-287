@@ -14,6 +14,9 @@ module Xkcd
       ParsesInputStringAction.should_receive(:execute) \
                        .with(context)
 
+      FindsMenusAction.should_receive(:execute) \
+                  .with(context)
+
       BuildsResultAction.should_receive(:execute) \
                   .with(context)
 
