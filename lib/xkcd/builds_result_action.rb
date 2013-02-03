@@ -10,7 +10,7 @@ module Xkcd
       found_menus.to_enum.with_index(1).each do |menu, i|
         result << "Menu %s:\n" % i
         menu.dishes.each do |dish|
-          result << "%s,$%s\n" % [dish.name, dish.price]
+          result << "%s,$%s\n" % [dish.name, dish.price.to_f]
         end
       end
 

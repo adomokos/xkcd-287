@@ -21,7 +21,7 @@ module Xkcd
     private
 
       def self.parse_price(source)
-       source.match(/(\d+\.\d+)/)[1].to_f
+        BigDecimal.new source.match(/(\d+\.\d+)/)[1]
       end
 
       def self.parse_dish(source)
