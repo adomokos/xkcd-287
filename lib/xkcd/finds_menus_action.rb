@@ -14,7 +14,7 @@ module Xkcd
         combinations.each do |combination|
           total_price_for_combination = combination.map(&:price).reduce(:+)
 
-          # To make sure the logic work, uncomment the line below
+          # Uncomment this line to check the price comparison
           # p "%s - %s" % [total_price_for_combination, target_price]
 
           if total_price_for_combination == target_price
