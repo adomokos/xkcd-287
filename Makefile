@@ -1,3 +1,5 @@
+all: specs cukes
+
 specs:
 	bin/rspec spec
 
