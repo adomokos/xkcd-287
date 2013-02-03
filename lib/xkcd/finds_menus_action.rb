@@ -3,7 +3,6 @@ module Xkcd
     include LightService::Action
 
     executed do |context|
-
       target_price = context.fetch :target_price
       dishes = context.fetch :dishes
 

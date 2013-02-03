@@ -11,7 +11,6 @@ module Xkcd
       ].each { |action| action.execute(context) }
 
       context
-
     end
 
   end
