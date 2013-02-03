@@ -7,22 +7,24 @@ module Xkcd
       target_price = context.fetch :target_price
       dishes = context.fetch :dishes
 
-      exact_matches = []
-      dishes.delete_if { |v| exact_matches << v if v.price == target_price }
+      found_dish_combinations = []
 
-      context[:found_menus] = exact_matches.map do |dish|
-        build_menu([dish])
-      end
+      (1..dishes.size).each do |i|
+        combinations = dishes.combination(i).to_a
+        combinations.each do |combination|
+          total_price_for_combination = combination.map(&:price).reduce(:+)
 
-
-      if dishes.size == 2
-        total_price = dishes.map(&:price).reduce(:+)
-
-        if total_price == target_price
-          context[:found_menus] << build_menu(dishes)
+          if total_price_for_combination == target_price
+            found_dish_combinations << combination
+          end
         end
       end
 
+      found_menus = found_dish_combinations.map do |dish_combination|
+        build_menu(dish_combination)
+      end
+
+      context[:found_menus] = found_menus
     end
 
     private
