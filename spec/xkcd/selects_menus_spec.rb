@@ -20,7 +20,9 @@ module Xkcd
       BuildsResultAction.should_receive(:execute) \
                   .with(context)
 
-      SelectsMenus.from_input_string(input_string)
+      result = SelectsMenus.from_input_string(input_string)
+
+      result.should eq context
     end
 
   end
