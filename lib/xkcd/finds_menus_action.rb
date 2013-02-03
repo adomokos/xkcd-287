@@ -24,7 +24,11 @@ module Xkcd
         build_menu(dish_combination)
       end
 
-      context[:found_menus] = found_menus
+      if found_menus.any?
+        context[:found_menus] = found_menus
+      else
+        context.set_failure!('No Combination of Dishes')
+      end
     end
 
     private

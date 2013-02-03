@@ -51,7 +51,6 @@ module Xkcd
         found_menu = found_menus.first
         found_menu.dishes.should eq [stew, tiramisu]
       end
-
     end
 
     context "when there are 3 dishes, last two in found menu" do
@@ -67,7 +66,19 @@ module Xkcd
         found_menu = found_menus.first
         found_menu.dishes.should eq [stew, tiramisu]
       end
+    end
 
+    context "when there are no matches" do
+      let(:context) do
+        LightService::Context.make(dishes: [salad], target_price: 18.05)
+      end
+
+      before { FindsMenusAction.execute(context) }
+
+      it "sets the 'No Combination of Dishes' error " do
+        context.should be_failure
+        context.message.should eq "No Combination of Dishes"
+      end
     end
   end
 end

@@ -9,3 +9,7 @@ end
 Then /^the following menus should be presented:$/ do |menus|
   @context[:result].should == menus
 end
+
+Then /^I should get the "(.*?)" error$/ do |error_message|
+  @context.should be_failure
+end

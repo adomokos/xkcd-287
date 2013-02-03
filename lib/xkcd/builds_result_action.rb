@@ -14,7 +14,7 @@ module Xkcd
         end
       end
 
-      context[:result] = result.chomp
+      context[:result] = result.chomp unless result.blank?
     end
   end
 end

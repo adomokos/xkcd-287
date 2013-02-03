@@ -1,6 +1,7 @@
 module Xkcd; end
 
 require 'light-service'
+require 'active_support/core_ext'
 require_relative 'xkcd/dish'
 require_relative 'xkcd/menu'
 require_relative 'xkcd/selects_menus'
