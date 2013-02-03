@@ -1,7 +1,7 @@
 Feature:
   System provides the text "No Combination of Dishes" if none found
 
-  Scenario: System provides the no combination of dishes error message
+  Scenario: System provides the "No Combination of Dishes" error message
     Given the following input file:
       """
       $18.60

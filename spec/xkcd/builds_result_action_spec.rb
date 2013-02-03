@@ -17,7 +17,6 @@ module Xkcd
       end
     end
 
-
     let(:found_menus) do
       [
         Menu.new.tap do |m|
@@ -30,11 +29,12 @@ module Xkcd
       LightService::Context.make(found_menus: found_menus)
     end
 
-    it "builds the result string" do
+    it "builds the result string from found menus" do
       BuildsResultAction.execute(context)
 
       result = context.fetch :result
       result.should eq "Menu 1:\nvegetable,$3.93\nfish,$5.04"
     end
+
   end
 end
