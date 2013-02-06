@@ -9,7 +9,7 @@ Dir.glob("menus/*.txt") do |menu_file|
   if context.failure?
     puts "#{context.message} in file: #{menu_file}"
   else
-    puts "Menu from file: #{menu_file}"
+    puts "Menus from file: #{menu_file}"
     puts context[:result]
   end
 
